@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Admin</title></head>
+<body>
+
+<h2>پنل ادمین</h2>
+
+<button onclick="load()">نمایش سفارش‌ها</button>
+
+<pre id="out"></pre>
+
+<script>
+async function load(){
+let res=await fetch("/admin/orders");
+let data=await res.json();
+document.getElementById("out").innerText=JSON.stringify(data,null,2);
+}
+</script>
+
+</body>
+</html>
